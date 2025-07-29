@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './App.css';
-import Navbar from '../components/Navbar'
+import Navbar from './Navbar'
 
 export default function UploadTarget() {
   const [file, setFile] = useState(null);

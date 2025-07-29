@@ -9,7 +9,7 @@ function Navbar() {
             <li><Link to={"/home"}>Home</Link></li>
             <li><Link to={"/about"}>About</Link></li>
             <li><Link to={"/terms-and-conditions"}>Terms and Conditions</Link></li>
-            <li><Link to={"/app"}>App</Link></li>
+            <li><Link to={"/"}>Shooting Analysis Form</Link></li>
         </ol>
     </div>
 
