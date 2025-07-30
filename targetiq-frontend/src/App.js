@@ -32,8 +32,11 @@ export default function UploadTarget() {
   return (
     <div className="p-6 max-w-xl mx-auto">
       <Navbar />
-      <h1 className="text-2xl font-bold mb-4">🎯 Upload Your Target Navbar Test</h1>
-      <h2 className="text-lg font-bold mb-2">Shooter Information</h2>
+      <h1 className="text-2xl font-bold mb-4">🎯 Upload Your Target</h1>
+      <h2 className="text-lg font-semibold mb-2">1. Upload Target Image</h2>
+      <p><input type="file" accept="image/*" onChange={handleFileChange} className="mb-4" /></p>
+      <br></br>
+      <h2 className="text-lg font-bold mb-2">2. Enter Shooter Information</h2>
       <p>
         <input type="text" placeholder="Enter Shooter's First Name" className="mb-4 w-full p-2 border rounded" />
       </p>
@@ -50,7 +53,7 @@ export default function UploadTarget() {
         <option value="Right Eye" />
         <option value="Left Eye" />
       </datalist>
-      <h2 className="text-lg font-bold mb-2">Target Information</h2>
+      <h2 className="text-lg font-bold mb-2">3. Enter Target Information</h2>
       <p><input type="text" placeholder="Enter Target Distance in Yards" className="mb-4 w-full p-2 border rounded" pattern="[0-9]*" title="Only numbers are allowed" /></p>
       <p><input list="target-location" name="targetLocation" id="targetLocation" placeholder="Select Target Location" /></p>
       <datalist id="target-location">
@@ -305,7 +308,7 @@ export default function UploadTarget() {
           </label>
         </div>
       </p>
-      <h2 className="text-lg font-bold mb-2">Firearm Information</h2>
+      <h2 className="text-lg font-bold mb-2">4. Enter Firearm Information</h2>
       <p><input list="firearm-makes" name="firearmMake" id="firearmMake" placeholder="Select Firearm's Make" className="mb-4 w-full p-2 border rounded" /></p>
       <datalist id="firearm-makes">
         <option value="Beretta" />
@@ -434,10 +437,10 @@ export default function UploadTarget() {
         <option value=".700 Nitro Express" />
         <option value="Other" />
       </datalist>
-      <h2 className="text-lg font-semibold mb-2">Upload Target Image</h2>
-      <p><input type="file" accept="image/*" onChange={handleFileChange} className="mb-4" /></p>
-
-
+      <br></br>
+      <p>
+      <h2 className="text-lg font-bold mb-2">5. Click Button to Analyze Your Target</h2></p>
+      <p>
       <button
         onClick={handleUpload}
         disabled={!file || loading}
@@ -445,7 +448,7 @@ export default function UploadTarget() {
       >
         {loading ? 'Processing...' : 'Analyze Target'}
       </button>
-
+      </p>
       {result && (
         <div className="mt-6 bg-gray-100 p-4 rounded shadow">
           
@@ -500,6 +503,10 @@ export default function UploadTarget() {
 
         </div>
       )}
+      <br></br>
+  <footer>
+    <p>&copy; 2025 TargetIQ. All rights reserved.</p>
+  </footer>
     </div>
   );
 }

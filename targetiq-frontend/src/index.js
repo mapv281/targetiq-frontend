@@ -10,7 +10,7 @@ import {
 
 import Home from './pages/Home';
 import About from './pages/About';
-import TermsAndConditions from './pages/TermsAndConditions';
+import TermsAndDisclaimer from './pages/TermsAndDisclaimer';
 
 const router = createBrowserRouter([
   {
@@ -22,8 +22,8 @@ const router = createBrowserRouter([
     element: <About />,
   },
   {
-    path: "/terms-and-conditions",
-    element: <TermsAndConditions />,
+    path: "/terms-and-disclaimer",
+    element: <TermsAndDisclaimer />,
   },
   {
     path: "",

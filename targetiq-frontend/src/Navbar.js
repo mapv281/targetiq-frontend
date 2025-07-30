@@ -8,8 +8,8 @@ function Navbar() {
         <ol>
             <li><Link to={"/home"}>Home</Link></li>
             <li><Link to={"/about"}>About</Link></li>
-            <li><Link to={"/terms-and-conditions"}>Terms and Conditions</Link></li>
-            <li><Link to={"/"}>Shooting Analysis Form</Link></li>
+            <li><Link to={"/terms-and-disclaimer"}>Terms of Use and Disclaimer</Link></li>
+            <li><Link to={"/"}>Request Shooting Analysis Report</Link></li>
         
         </ol>
     </div>
