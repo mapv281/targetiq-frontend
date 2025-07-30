@@ -14,7 +14,7 @@ import TermsAndConditions from './pages/TermsAndConditions';
 
 const router = createBrowserRouter([
   {
-    path: "/Home",
+    path: "/home",
     element: <Home />,
   },
   {

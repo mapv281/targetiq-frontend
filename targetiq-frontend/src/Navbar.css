@@ -1,18 +1,43 @@
 /* navbar.css */
 ol{
     list-style-type: none;
-    background-color: #282828;
-    color: #fff;
+    background-color: black;
+    color: white;
     overflow: hidden;
     margin: 0;
     border: 0;
 }
 li{
-    float:right;
+    /*float:right;
     display: inline-block;
-    padding: 25px;
+    padding: 25px;*/
+    float:left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    /*display: inline-block;*/
 }
-.navigation-menu{
 
+a:link { 
+  text-decoration: none;
+  color: white;
+} 
+a:visited { 
+  text-decoration: none; 
+  color: white;
+} 
+a:hover { 
+  text-decoration: none; 
+  color: white;
+  background-color: gray;
+} 
+a:active { 
+  text-decoration: none; 
+  color: white;
+}
+
+.navigation-menu{
     width: 100%;
 }
