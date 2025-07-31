@@ -464,7 +464,6 @@ export default function UploadTarget() {
           <p><strong>Location:</strong> {result.shooter_location}</p>
 
           <h2 className="text-lg font-semibold mb-2">🔍 Results</h2>
-          <p><strong>Total Detected Shots:</strong> {result.total_shots}</p>
           <p><strong>Shot Grouping Pattern:</strong> {result.shot_group_pattern}</p>
           <p><strong>Shot Vertical Pattern:</strong> {result.shot_vertical_pattern}</p>
           <p><strong>Shot Distribution Overview:</strong> {result.shot_distribution_overview}</p>
