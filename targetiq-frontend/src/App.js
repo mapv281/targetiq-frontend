@@ -5,8 +5,6 @@ import Navbar from './Navbar'
 
 export default function UploadTarget() {
   const [file, setFile] = useState(null);
-  const [result, setResult] = useState(null);
-  const [loading, setLoading] = useState(false);
   /* User information */
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -18,11 +16,25 @@ export default function UploadTarget() {
   const [targetType, setTargetType] = useState('');
   const [firearmMake, setFirearmMake] = useState('');
   const [firearmModel, setFirearmModel] = useState('');
-  const [caliber, setCaliber] = useState('');
+  const [firearmCaliber, setFirearmCaliber] = useState('');
+  /*end user information */
+  const [result, setResult] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
     setResult(null);
+    setFirstName('');
+    setLastName('');
+    setHandedness('');
+    setDominantEye('');
+    setDistance('');
+    setLocation('');
+    setTrainingGoal('');
+    setTargetType('');
+    setFirearmMake('');
+    setFirearmModel('');
+    setFirearmCaliber('');
   };
 
   const handleUpload = async () => {
@@ -40,7 +52,7 @@ export default function UploadTarget() {
     formData.append('target_type', targetType);
     formData.append('firearm_make', firearmMake);
     formData.append('firearm_model', firearmModel);
-    formData.append('caliber', caliber);
+    formData.append('firearm_caliber', firearmCaliber);
 
     try {
       const res = await axios.post('https://targetiq-backend.onrender.com/upload', formData);
@@ -61,34 +73,34 @@ export default function UploadTarget() {
       <br></br>
       <h2 className="text-lg font-bold mb-2">2. Enter Shooter Information</h2>
       <p>
-        <input type="text" placeholder="Enter Shooter's First Name" className="mb-4 w-full p-2 border rounded" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+        <input type="text" placeholder="Enter Shooter's First Name" className="mb-4 w-full p-2 border rounded" />
       </p>
       <p>
-        <input type="text" placeholder="Enter Shooter's Last Name" className="mb-4 w-full p-2 border rounded" value={lastName} onChange={(e) => setLastName(e.target.value)} />
+        <input type="text" placeholder="Enter Shooter's Last Name" className="mb-4 w-full p-2 border rounded" />
       </p>
-      <p><input type="text" id="handedness" name="handedness" list="handedness-list" placeholder="Select Handedness" className="mb-4 w-full p-2 border rounded" value={handedness} onChange={(e) => setHandedness(e.target.value)} /></p>
+      <p><input type="text" id="handedness" name="handedness" list="handedness-list" placeholder="Select Handedness" className="mb-4 w-full p-2 border rounded" /></p>
       <datalist id="handedness-list">
         <option value="Right-handed" />
         <option value="Left-handed" />
       </datalist>
-      <p><input type="text" id="dominanteye" name="dominanteye" list="dominanteye-list" placeholder="Select Dominant Eye" className="mb-4 w-full p-2 border rounded" value={dominantEye} onChange={(e) => setDominantEye(e.target.value)} /></p>
+      <p><input type="text" id="dominanteye" name="dominanteye" list="dominanteye-list" placeholder="Select Dominant Eye" className="mb-4 w-full p-2 border rounded" /></p>
       <datalist id="dominanteye-list">
         <option value="Right Eye" />
         <option value="Left Eye" />
       </datalist>
       <h2 className="text-lg font-bold mb-2">3. Enter Target Information</h2>
-      <p><input type="text" placeholder="Enter Target Distance in Yards" className="mb-4 w-full p-2 border rounded" pattern="[0-9]*" title="Only numbers are allowed" value={distance} onChange={(e) => setDistance(e.target.value)} /></p>
-      <p><input list="target-location" name="targetLocation" id="targetLocation" placeholder="Select Target Location" value={location} onChange={(e) => setLocation(e.target.value)} /></p>
+      <p><input type="text" placeholder="Enter Target Distance in Yards" className="mb-4 w-full p-2 border rounded" pattern="[0-9]*" title="Only numbers are allowed"  /></p>
+      <p><input list="target-location" name="targetLocation" id="targetLocation" placeholder="Select Target Location" /></p>
       <datalist id="target-location">
       <option value="Indoor" />
       <option value="Outdoor" />
       </datalist>
-      <p><input list="target-traininggoal" name="trainingGoal" id="trainingGoal" placeholder="Select Training Goal" value={trainingGoal} onChange={(e) => setTrainingGoal(e.target.value)} /></p>
+      <p><input list="target-traininggoal" name="trainingGoal" id="trainingGoal" placeholder="Select Training Goal" /></p>
       <datalist id="target-traininggoal">
       <option value="Self-Defense" />
       <option value="Precision Shooting" />
       </datalist>
-      <p><input list="target-types" name="targetType" id="targetType" placeholder="Select Target Type" value={targetType} onChange={(e) => setTargetType(e.target.value)} /></p>
+      <p><input list="target-types" name="targetType" id="targetType" placeholder="Select Target Type" /></p>
       <datalist id="target-types">
       <option value="Unknown or Unspecified" />
       <option value="AP-1(CB)" />
@@ -332,7 +344,7 @@ export default function UploadTarget() {
         </div>
       </p>
       <h2 className="text-lg font-bold mb-2">4. Enter Firearm Information</h2>
-      <p><input list="firearm-makes" name="firearmMake" id="firearmMake" placeholder="Select Firearm's Make" className="mb-4 w-full p-2 border rounded" value={firearmMake} onChange={(e) => setFirearmMake(e.target.value)} /></p>
+      <p><input list="firearm-makes" name="firearmMake" id="firearmMake" placeholder="Select Firearm's Make" className="mb-4 w-full p-2 border rounded" /></p>
       <datalist id="firearm-makes">
         <option value="Beretta" />
         <option value="Browning" />
@@ -379,8 +391,8 @@ export default function UploadTarget() {
         <option value="Christensen Arms" />
         <option value="Other" />
       </datalist>
-      <p><input type="text" placeholder="Enter Firearm Model" className="mb-4 w-full p-2 border rounded" value={firearmModel} onChange={(e) => setFirearmModel(e.target.value)} /></p>
-      <p><input type="text" id="caliber" name="caliber" list="caliber-list" placeholder="Select Caliber" className="mb-4 w-full p-2 border rounded" value={caliber} onChange={(e) => setCaliber(e.target.value)} /></p>
+      <p><input type="text" placeholder="Enter Firearm Model" className="mb-4 w-full p-2 border rounded" /></p>
+      <p><input type="text" id="caliber" name="caliber" list="caliber-list" placeholder="Select Caliber" className="mb-4 w-full p-2 border rounded" /></p>
       <datalist id="caliber-list">
         <option value="9mm Luger" />
         <option value=".45 ACP" />
@@ -484,7 +496,7 @@ export default function UploadTarget() {
           <p><strong>Firearm Make:</strong> {result.shooter_firearm_make}</p>
           <p><strong>Firearm Model:</strong> {result.shooter_firearm_model}</p>
           <p><strong>Distance:</strong> {result.shooter_distance}</p>
-          <p><strong>Location:</strong> {result.shooter_location}</p>
+          <p><strong>Location:</strong> {result.shooter_range_location}</p>
 
           <h2 className="text-lg font-semibold mb-2">🔍 Results</h2>
           <p><strong>Shot Grouping Pattern:</strong> {result.shot_group_pattern}</p>
