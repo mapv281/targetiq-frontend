@@ -262,7 +262,7 @@ export default function UploadTarget() {
           <img src="https://xxhmosfjm5xayj7j.public.blob.vercel-storage.com/B-8P-300x300.jpg" alt="B-8(P)" class="image-grid img" />B-8(P)
           </label>
           <label>
-          <img src="https://nationaltarget.com/wp-content/uploads/2025/01/B-8-P-BLUE-ART-300x300.png" alt="B-8(P) Blue" class="image-grid img" />B-8(P) Blue
+          <img src="https://xxhmosfjm5xayj7j.public.blob.vercel-storage.com/B-8-P-BLUE-ART-300x300.png" alt="B-8(P) Blue" class="image-grid img" />B-8(P) Blue
           </label>
           <label>
           <img src="https://xxhmosfjm5xayj7j.public.blob.vercel-storage.com/B-8P-300x300.jpg" alt="B-8(T)" class="image-grid img" />B-8(T)
@@ -289,10 +289,10 @@ export default function UploadTarget() {
           <img src="https://xxhmosfjm5xayj7j.public.blob.vercel-storage.com/D-2.gif" alt="D-2" class="image-grid img" />D-2
           </label>
           <label>
-          <img src="https://nationaltarget.com/wp-content/uploads/2025/01/sqt-a-1-art-300x300.png" alt="GA SQT. A-1" class="image-grid img" />GA SQT. A-1
+          <img src="https://xxhmosfjm5xayj7j.public.blob.vercel-storage.com/sqt-a-1-art-300x300.png" alt="GA SQT. A-1" class="image-grid img" />GA SQT. A-1
           </label>
           <label>
-          <img src="https://nationaltarget.com/wp-content/uploads/2025/01/GA-PT.gif" alt="GA-PT" class="image-grid img" />GA-PT
+          <img src="https://xxhmosfjm5xayj7j.public.blob.vercel-storage.com/GA-PT.gif" alt="GA-PT" class="image-grid img" />GA-PT
           </label>
           <label>
           <img src="https://xxhmosfjm5xayj7j.public.blob.vercel-storage.com/IDPA-CB-300x300.jpg" alt="IDPA (CB)" class="image-grid img" />IDPA (CB)
@@ -455,6 +455,7 @@ export default function UploadTarget() {
           <h2 className="text-lg font-semibold mb-2">Shooter's Profile</h2>
           <p><strong>Name:</strong> {result.shooter_name}</p>
           <p><strong>Handedness:</strong> {result.shooter_handedness}</p>
+          <p><strong>Dominant Eye:</strong> {result.shooter_dominant_eye}</p>
           <p><strong>Caliber:</strong> {result.shooter_caliber}</p>
           <p><strong>Target Type:</strong> {result.shooter_target_type}</p>
           <p><strong>Firearm Make:</strong> {result.shooter_firearm_make}</p>
@@ -463,43 +464,45 @@ export default function UploadTarget() {
           <p><strong>Location:</strong> {result.shooter_location}</p>
 
           <h2 className="text-lg font-semibold mb-2">🔍 Results</h2>
-          <p><strong>Total Shots:</strong> {result.total_shots}</p>
-          <p><strong>X Ring:</strong> {result.x_ring}</p>
-          <p><strong>10 Ring:</strong> {result.ten_ring}</p>
-          <p><strong>9 Ring:</strong> {result.nine_ring}</p>
-          <p><strong>Other Hits:</strong> {result.other_hits}</p>
+          <p><strong>Total Detected Shots:</strong> {result.total_shots}</p>
+          <p><strong>Shot Grouping Pattern:</strong> {result.shot_group_pattern}</p>
+          <p><strong>Shot Vertical Pattern:</strong> {result.shot_vertical_pattern}</p>
           <p><strong>Shot Distribution Overview:</strong> {result.shot_distribution_overview}</p>
-
+          <br></br>
           <div className="mt-2">
             <strong>Coaching Analysis:</strong>
-            <ul className="list-disc list-inside">
+            <p>
               {result.coaching_analysis.map((tip, i) => (
-                <li key={i}>{tip}</li>
+                <p key={i}>- {tip}</p>
               ))}
-            </ul>
+            </p>
           </div>
-
+          <br></br>
           <div className="mt-2">
             <strong>Areas of Improvement:</strong>
-            <ul className="list-disc list-inside">
+            <p>
               {result.areas_of_improvement.map((tip, i) => (
-                <li key={i}>{tip}</li>
+                <p key={i}>- {tip}</p>
               ))}
-            </ul>
+            </p>
           </div>
-
+          <br></br>
           <div className="mt-2">
             <strong>Suggestions:</strong>
-            <ul className="list-disc list-inside">
+            <p>
               {result.suggestions.map((tip, i) => (
-                <li key={i}>{tip}</li>
+                <p key={i}>- {tip}</p>
               ))}
-            </ul>
+            </p>
           </div>
 
-          <p><strong>Summary:</strong> {result.summary}</p>
+          <br></br>    
 
           <p><strong>Recommendations:</strong> {result.recommendations}</p>
+
+          <p><strong>Corrective Drills:</strong> {result.corrective_drills}</p>
+
+          <p><strong>Summary:</strong> {result.summary}</p>
 
         </div>
       )}
