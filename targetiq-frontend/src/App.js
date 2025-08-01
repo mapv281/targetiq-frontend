@@ -73,34 +73,34 @@ export default function UploadTarget() {
       <br></br>
       <h2 className="text-lg font-bold mb-2">2. Enter Shooter Information</h2>
       <p>
-        <input type="text" placeholder="Enter Shooter's First Name" className="mb-4 w-full p-2 border rounded" />
+        <input type="text" placeholder="Enter Shooter's First Name" className="mb-4 w-full p-2 border rounded" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
       </p>
       <p>
-        <input type="text" placeholder="Enter Shooter's Last Name" className="mb-4 w-full p-2 border rounded" />
+        <input type="text" placeholder="Enter Shooter's Last Name" className="mb-4 w-full p-2 border rounded" value={lastName} onChange={(e) => setLastName(e.target.value)} />
       </p>
-      <p><input type="text" id="handedness" name="handedness" list="handedness-list" placeholder="Select Handedness" className="mb-4 w-full p-2 border rounded" /></p>
+      <p><input type="text" id="handedness" name="handedness" list="handedness-list" placeholder="Select Handedness" className="mb-4 w-full p-2 border rounded" value={handedness} onChange={(e) => setHandedness(e.target.value)} /></p>
       <datalist id="handedness-list">
         <option value="Right-handed" />
         <option value="Left-handed" />
       </datalist>
-      <p><input type="text" id="dominanteye" name="dominanteye" list="dominanteye-list" placeholder="Select Dominant Eye" className="mb-4 w-full p-2 border rounded" /></p>
+      <p><input type="text" id="dominanteye" name="dominanteye" list="dominanteye-list" placeholder="Select Dominant Eye" className="mb-4 w-full p-2 border rounded" value={dominantEye} onChange={(e) => setDominantEye(e.target.value)} /></p>
       <datalist id="dominanteye-list">
         <option value="Right Eye" />
         <option value="Left Eye" />
       </datalist>
       <h2 className="text-lg font-bold mb-2">3. Enter Target Information</h2>
-      <p><input type="text" placeholder="Enter Target Distance in Yards" className="mb-4 w-full p-2 border rounded" pattern="[0-9]*" title="Only numbers are allowed"  /></p>
-      <p><input list="target-location" name="targetLocation" id="targetLocation" placeholder="Select Target Location" /></p>
+      <p><input type="text" placeholder="Enter Target Distance in Yards" className="mb-4 w-full p-2 border rounded" pattern="[0-9]*" title="Only numbers are allowed" value={distance} onChange={(e) => setDistance(e.target.value)} /></p>
+      <p><input list="target-location" name="targetLocation" id="targetLocation" placeholder="Select Target Location" value={location} onChange={(e) => setLocation(e.target.value)} /></p>
       <datalist id="target-location">
       <option value="Indoor" />
       <option value="Outdoor" />
       </datalist>
-      <p><input list="target-traininggoal" name="trainingGoal" id="trainingGoal" placeholder="Select Training Goal" /></p>
+      <p><input list="target-traininggoal" name="trainingGoal" id="trainingGoal" placeholder="Select Training Goal" value={trainingGoal} onChange={(e) => setTrainingGoal(e.target.value)} /></p>
       <datalist id="target-traininggoal">
       <option value="Self-Defense" />
       <option value="Precision Shooting" />
       </datalist>
-      <p><input list="target-types" name="targetType" id="targetType" placeholder="Select Target Type" /></p>
+      <p><input list="target-types" name="targetType" id="targetType" placeholder="Select Target Type" value={targetType} onChange={(e) => setTargetType(e.target.value)} /></p>
       <datalist id="target-types">
       <option value="Unknown or Unspecified" />
       <option value="AP-1(CB)" />
@@ -344,7 +344,7 @@ export default function UploadTarget() {
         </div>
       </p>
       <h2 className="text-lg font-bold mb-2">4. Enter Firearm Information</h2>
-      <p><input list="firearm-makes" name="firearmMake" id="firearmMake" placeholder="Select Firearm's Make" className="mb-4 w-full p-2 border rounded" /></p>
+      <p><input list="firearm-makes" name="firearmMake" id="firearmMake" placeholder="Select Firearm's Make" className="mb-4 w-full p-2 border rounded" value={firearmMake} onChange={(e) => setFirearmMake(e.target.value)} /></p>
       <datalist id="firearm-makes">
         <option value="Beretta" />
         <option value="Browning" />
@@ -391,8 +391,8 @@ export default function UploadTarget() {
         <option value="Christensen Arms" />
         <option value="Other" />
       </datalist>
-      <p><input type="text" placeholder="Enter Firearm Model" className="mb-4 w-full p-2 border rounded" /></p>
-      <p><input type="text" id="caliber" name="caliber" list="caliber-list" placeholder="Select Caliber" className="mb-4 w-full p-2 border rounded" /></p>
+      <p><input type="text" placeholder="Enter Firearm Model" className="mb-4 w-full p-2 border rounded" value={firearmModel} onChange={(e) => setFirearmModel(e.target.value)} /></p>
+      <p><input type="text" id="caliber" name="caliber" list="caliber-list" placeholder="Select Caliber" className="mb-4 w-full p-2 border rounded" value={firearmCaliber} onChange={(e) => setFirearmCaliber(e.target.value)} /></p>
       <datalist id="caliber-list">
         <option value="9mm Luger" />
         <option value=".45 ACP" />
